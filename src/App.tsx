@@ -19,7 +19,21 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogClose } from './components/AlertDialog'
 import { Menu, MenuTrigger, MenuContent, MenuItem, MenuSeparator, MenuLabel } from './components/Menu'
 import { NumberField } from './components/NumberField'
-import { Moon, Sun, Heart, Info, Settings } from 'lucide-react'
+import { Toast as BaseUIToast } from '@base-ui/react/toast'
+import { ToastProvider, ToastViewport, Toast, ToastTitle, ToastDescription, ToastClose } from './components/Toast'
+
+const { useToastManager } = BaseUIToast
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from './components/Collapsible'
+import { Toggle } from './components/Toggle'
+import { Avatar, AvatarImage, AvatarFallback } from './components/Avatar'
+import { CheckboxGroup } from './components/CheckboxGroup'
+import { Fieldset, FieldsetLegend } from './components/Fieldset'
+import { Meter } from './components/Meter'
+import { ToggleGroup, ToggleGroupItem } from './components/ToggleGroup'
+import { Toolbar, ToolbarButton, ToolbarSeparator } from './components/Toolbar'
+import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem } from './components/ContextMenu'
+import { ScrollArea } from './components/ScrollArea'
+import { Moon, Sun, Heart, Info, Settings, Bold, Italic, Underline } from 'lucide-react'
 import './styles/globals.css'
 
 function ThemeToggle() {
@@ -37,9 +51,40 @@ function ThemeToggle() {
   )
 }
 
+function ToastDemo() {
+  const { add, toasts } = useToastManager()
+
+  return (
+    <>
+      <Button 
+        onClick={() => add({
+          title: 'Notification',
+          description: 'This is a toast notification with Neumorphism styling!',
+          type: 'default',
+        })} 
+        variant="primary"
+      >
+        Show Toast
+      </Button>
+      {toasts.map((toast: any) => (
+        <Toast key={toast.id} toast={toast}>
+          <div className="grid gap-1">
+            <ToastTitle>{toast.title}</ToastTitle>
+            <ToastDescription>{toast.description}</ToastDescription>
+          </div>
+          <ToastClose />
+        </Toast>
+      ))}
+      <ToastViewport />
+    </>
+  )
+}
+
 function DemoContent() {
   const [checked, setChecked] = useState(false)
   const [switchOn, setSwitchOn] = useState(false)
+  const [bold, setBold] = useState(false)
+  const [italic, setItalic] = useState(false)
 
   return (
     <div className="min-h-screen py-12 px-4">
@@ -653,6 +698,246 @@ function DemoContent() {
           </CardContent>
         </Card>
 
+        {/* Toast, Collapsible & Toggle Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Toast, Collapsible & Toggle</CardTitle>
+            <CardDescription>
+              Notifications, collapsible content, and toggle buttons
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Toast Notifications
+              </h4>
+              <ToastDemo />
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Collapsible
+              </h4>
+              <Collapsible>
+                <CollapsibleTrigger>
+                  Click to expand
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <p className="text-sm text-secondary-600 dark:text-secondary-400 mt-2">
+                    This is collapsible content that can be shown or hidden with smooth animations.
+                  </p>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Toggle Buttons
+              </h4>
+              <div className="flex gap-2">
+                <Toggle pressed={bold} onPressedChange={setBold}>
+                  <Bold className="h-4 w-4" />
+                </Toggle>
+                <Toggle pressed={italic} onPressedChange={setItalic}>
+                  <Italic className="h-4 w-4" />
+                </Toggle>
+                <Toggle size="lg">
+                  <Underline className="h-4 w-4" />
+                </Toggle>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Avatar & Meter Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Avatar & Meter</CardTitle>
+            <CardDescription>
+              User avatars and progress meters
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Avatars
+              </h4>
+              <div className="flex items-center gap-4">
+                <Avatar>
+                  <AvatarImage src="https://github.com/shadcn.png" alt="User" />
+                  <AvatarFallback>JD</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarFallback>AB</AvatarFallback>
+                </Avatar>
+                <Avatar className="h-12 w-12">
+                  <AvatarFallback>XY</AvatarFallback>
+                </Avatar>
+              </div>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Meters
+              </h4>
+              <div className="space-y-2">
+                <Label>Optimal (75%)</Label>
+                <Meter value={75} size="md" />
+              </div>
+              <div className="space-y-2">
+                <Label>Sub-optimal (45%)</Label>
+                <Meter value={45} size="md" />
+              </div>
+              <div className="space-y-2">
+                <Label>Critical (20%)</Label>
+                <Meter value={20} size="md" />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Fieldset & CheckboxGroup Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Fieldset & Checkbox Group</CardTitle>
+            <CardDescription>
+              Form grouping and checkbox collections
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Fieldset>
+              <FieldsetLegend>Personal Information</FieldsetLegend>
+              <div className="space-y-3">
+                <Input placeholder="First Name" />
+                <Input placeholder="Last Name" />
+                <Input placeholder="Email" type="email" />
+              </div>
+            </Fieldset>
+
+            <CheckboxGroup defaultValue={['notifications']}>
+              <Label className="mb-2 block">Preferences</Label>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Checkbox value="notifications" />
+                  <Label>Email notifications</Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Checkbox value="marketing" />
+                  <Label>Marketing emails</Label>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Checkbox value="updates" />
+                  <Label>Product updates</Label>
+                </div>
+              </div>
+            </CheckboxGroup>
+          </CardContent>
+        </Card>
+
+        {/* ToggleGroup & Toolbar Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Toggle Group & Toolbar</CardTitle>
+            <CardDescription>
+              Toggle button groups and toolbars for formatting
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Toggle Group
+              </h4>
+              <ToggleGroup defaultValue={['bold']}>
+                <ToggleGroupItem value="bold">
+                  <Bold className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="italic">
+                  <Italic className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="underline">
+                  <Underline className="h-4 w-4" />
+                </ToggleGroupItem>
+              </ToggleGroup>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Toolbar
+              </h4>
+              <Toolbar>
+                <ToolbarButton>
+                  <Bold className="h-4 w-4" />
+                </ToolbarButton>
+                <ToolbarButton>
+                  <Italic className="h-4 w-4" />
+                </ToolbarButton>
+                <ToolbarButton>
+                  <Underline className="h-4 w-4" />
+                </ToolbarButton>
+                <ToolbarSeparator />
+                <ToolbarButton>Save</ToolbarButton>
+                <ToolbarButton>Export</ToolbarButton>
+              </Toolbar>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Context Menu & Scroll Area Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Context Menu & Scroll Area</CardTitle>
+            <CardDescription>
+              Right-click menus and custom scrollable areas
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Context Menu (Right-click)
+              </h4>
+              <ContextMenu>
+                <ContextMenuTrigger>
+                  <div className="flex h-32 w-full items-center justify-center rounded-neumorph border-2 border-dashed border-secondary-300 dark:border-secondary-700">
+                    <p className="text-sm text-secondary-600 dark:text-secondary-400">
+                      Right-click here
+                    </p>
+                  </div>
+                </ContextMenuTrigger>
+                <ContextMenuContent>
+                  <ContextMenuItem>Copy</ContextMenuItem>
+                  <ContextMenuItem>Paste</ContextMenuItem>
+                  <ContextMenuItem>Delete</ContextMenuItem>
+                </ContextMenuContent>
+              </ContextMenu>
+            </div>
+
+            <Separator />
+
+            <div className="space-y-3">
+              <h4 className="text-sm font-medium text-secondary-700 dark:text-secondary-300">
+                Scroll Area
+              </h4>
+              <ScrollArea className="h-48 w-full rounded-neumorph p-4 bg-neumorph-light-bg dark:bg-neumorph-dark-bg shadow-neumorph-inset dark:shadow-neumorph-dark-inset">
+                <div className="space-y-2">
+                  {Array.from({ length: 20 }).map((_, i) => (
+                    <p key={i} className="text-sm text-secondary-600 dark:text-secondary-400">
+                      Scrollable content item {i + 1}
+                    </p>
+                  ))}
+                </div>
+              </ScrollArea>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Footer */}
         <div className="text-center space-y-2">
           <p className="text-sm text-secondary-600 dark:text-secondary-400">
@@ -667,7 +952,9 @@ function DemoContent() {
 export default function App() {
   return (
     <ThemeProvider defaultTheme="system">
-      <DemoContent />
+      <ToastProvider>
+        <DemoContent />
+      </ToastProvider>
     </ThemeProvider>
   )
 }
