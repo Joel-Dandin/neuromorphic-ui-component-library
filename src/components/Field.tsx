@@ -2,7 +2,24 @@ import * as React from 'react'
 import { Field as BaseField } from '@base-ui/react/field'
 import { cn } from '@/lib/utils'
 
+// Standalone Label component (can be used anywhere)
 const Label = React.forwardRef<
+  HTMLLabelElement,
+  React.LabelHTMLAttributes<HTMLLabelElement>
+>(({ className, ...props }, ref) => (
+  <label
+    ref={ref}
+    className={cn(
+      'text-sm font-medium text-secondary-700 dark:text-secondary-300 mb-1.5 block',
+      className
+    )}
+    {...props}
+  />
+))
+Label.displayName = 'Label'
+
+// Field-specific Label (must be used inside Field.Root)
+const FieldLabel = React.forwardRef<
   HTMLLabelElement,
   React.ComponentPropsWithoutRef<typeof BaseField.Label>
 >(({ className, ...props }, ref) => (
@@ -15,7 +32,7 @@ const Label = React.forwardRef<
     {...props}
   />
 ))
-Label.displayName = 'Label'
+FieldLabel.displayName = 'FieldLabel'
 
 const FieldDescription = React.forwardRef<
   HTMLParagraphElement,
@@ -55,4 +72,4 @@ const Field = React.forwardRef<HTMLDivElement, FieldProps>(
 
 Field.displayName = 'Field'
 
-export { Field, Label, FieldDescription, FieldError }
+export { Field, Label, FieldLabel, FieldDescription, FieldError }
