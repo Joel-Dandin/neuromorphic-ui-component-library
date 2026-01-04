@@ -30,7 +30,7 @@ const checkboxVariants = cva(
 )
 
 export interface CheckboxProps
-  extends Omit<React.ComponentPropsWithoutRef<typeof BaseCheckbox>, 'children'>,
+  extends Omit<React.ComponentPropsWithoutRef<typeof BaseCheckbox.Root>, 'children'>,
     VariantProps<typeof checkboxVariants> {}
 
 const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
@@ -38,7 +38,7 @@ const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
     const iconSize = size === 'sm' ? 12 : size === 'lg' ? 18 : 14
 
     return (
-      <BaseCheckbox
+      <BaseCheckbox.Root
         ref={ref}
         className={cn(checkboxVariants({ size, className }))}
         {...props}
@@ -50,7 +50,7 @@ const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
             strokeWidth={3}
           />
         </BaseCheckbox.Indicator>
-      </BaseCheckbox>
+      </BaseCheckbox.Root>
     )
   }
 )

@@ -5,7 +5,7 @@ import { Input } from './components/Input'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './components/Card'
 import { Switch } from './components/Switch'
 import { Checkbox } from './components/Checkbox'
-import { Field, Label, FieldDescription } from './components/Field'
+// import { Field, Label, FieldDescription } from './components/Field'
 import { Moon, Sun, User, Mail, Lock, Heart } from 'lucide-react'
 import './styles/globals.css'
 
@@ -91,7 +91,7 @@ function DemoContent() {
         </Card>
 
         {/* Inputs Section */}
-        <Card>
+        {/* <Card>
           <CardHeader>
             <CardTitle>Input Fields</CardTitle>
             <CardDescription>
@@ -132,7 +132,7 @@ function DemoContent() {
               <Input size="lg" placeholder="Large input field" />
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
         {/* Cards Section */}
         <div className="space-y-6">
@@ -217,7 +217,7 @@ function DemoContent() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
-                    <Label>Enable notifications</Label>
+                    {/* <Label>Enable notifications</Label> */}
                     <p className="text-sm text-secondary-600 dark:text-secondary-400">
                       Receive notifications about updates
                     </p>
@@ -240,7 +240,7 @@ function DemoContent() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Checkbox checked={checked} onCheckedChange={setChecked} />
-                  <Label>Accept terms and conditions</Label>
+                  {/* <Label>Accept terms and conditions</Label> */}
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -260,7 +260,7 @@ function DemoContent() {
             <CardDescription>Enter your credentials to continue</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <Field>
+            {/* <Field>
               <Label>Email</Label>
               <Input type="email" placeholder="you@example.com" />
             </Field>
@@ -268,11 +268,11 @@ function DemoContent() {
             <Field>
               <Label>Password</Label>
               <Input type="password" placeholder="••••••••" />
-            </Field>
+            </Field> */}
 
             <div className="flex items-center gap-3">
               <Checkbox size="sm" />
-              <Label className="text-sm">Remember me</Label>
+              {/* <Label className="text-sm">Remember me</Label> */}
             </div>
           </CardContent>
           <CardFooter className="flex-col gap-3">

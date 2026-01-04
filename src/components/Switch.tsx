@@ -52,19 +52,19 @@ const switchThumbVariants = cva(
 )
 
 export interface SwitchProps
-  extends Omit<React.ComponentPropsWithoutRef<typeof BaseSwitch>, 'children'>,
+  extends Omit<React.ComponentPropsWithoutRef<typeof BaseSwitch.Root>, 'children'>,
     VariantProps<typeof switchVariants> {}
 
 const Switch = React.forwardRef<HTMLButtonElement, SwitchProps>(
   ({ className, size, ...props }, ref) => {
     return (
-      <BaseSwitch
+      <BaseSwitch.Root
         ref={ref}
         className={cn(switchVariants({ size, className }))}
         {...props}
       >
         <BaseSwitch.Thumb className={cn(switchThumbVariants({ size }))} />
-      </BaseSwitch>
+      </BaseSwitch.Root>
     )
   }
 )

@@ -41,8 +41,18 @@ const FieldError = React.forwardRef<
 ))
 FieldError.displayName = 'FieldError'
 
-export interface FieldProps extends React.ComponentPropsWithoutRef<typeof BaseField> {}
+export interface FieldProps extends React.ComponentPropsWithoutRef<typeof BaseField.Root> {}
 
-const Field = BaseField
+const Field = React.forwardRef<HTMLDivElement, FieldProps>(
+  ({ className, ...props }, ref) => (
+    <BaseField.Root
+      ref={ref}
+      className={cn('space-y-2', className)}
+      {...props}
+    />
+  )
+)
+
+Field.displayName = 'Field'
 
 export { Field, Label, FieldDescription, FieldError }
