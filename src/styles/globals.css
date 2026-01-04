@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --neumorph-bg: 224 229 236; /* #e0e5ec */
+    --neumorph-shadow-dark: 163 177 198; /* #a3b1c6 */
+    --neumorph-shadow-light: 255 255 255; /* #ffffff */
+  }
+
+  .dark {
+    --neumorph-bg: 44 62 80; /* #2c3e50 */
+    --neumorph-shadow-dark: 26 38 52; /* #1a2634 */
+    --neumorph-shadow-light: 62 82 102; /* #3e5266 */
+  }
+
+  * {
+    @apply border-secondary-200 dark:border-secondary-700;
+  }
+
+  body {
+    @apply bg-neumorph-light-bg dark:bg-neumorph-dark-bg text-secondary-900 dark:text-secondary-100;
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .neumorph-base {
+    @apply rounded-neumorph shadow-neumorph dark:shadow-neumorph-dark;
+    @apply transition-all duration-200;
+  }
+
+  .neumorph-pressed {
+    @apply shadow-neumorph-inset dark:shadow-neumorph-dark-inset;
+  }
+
+  .neumorph-hover {
+    @apply hover:shadow-neumorph-lg dark:hover:shadow-neumorph-dark-lg;
+  }
+
+  .neumorph-flat {
+    @apply bg-neumorph-light-bg dark:bg-neumorph-dark-bg;
+  }
+}
