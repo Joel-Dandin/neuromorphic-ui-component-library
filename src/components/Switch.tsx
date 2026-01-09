@@ -13,6 +13,8 @@ const switchVariants = cva(
     'cursor-pointer',
     'disabled:opacity-50 disabled:pointer-events-none',
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
+    'data-[state=checked]:bg-gradient-to-r data-[state=checked]:from-primary-100 data-[state=checked]:to-primary-200',
+    'data-[state=checked]:dark:from-primary-900/30 data-[state=checked]:dark:to-primary-800/30',
   ].join(' '),
   {
     variants: {

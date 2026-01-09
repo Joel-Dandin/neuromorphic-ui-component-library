@@ -42,8 +42,13 @@ const NumberField = React.forwardRef<HTMLDivElement, NumberFieldProps>(
           <BaseNumberField.Input
             className={cn(
               'w-full bg-transparent text-secondary-900 dark:text-secondary-100',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2',
+              'focus-visible:outline-none',
+              'selection:bg-primary-200 selection:text-primary-900',
+              'dark:selection:bg-primary-800 dark:selection:text-primary-100',
               'placeholder:text-secondary-400 dark:placeholder:text-secondary-500',
+              'rounded-neumorph-sm px-2 py-1',
+              'focus:shadow-inner focus:ring-1 focus:ring-primary-500/30',
+              'transition-all duration-150',
               size === 'sm' && 'text-sm',
               size === 'md' && 'text-base',
               size === 'lg' && 'text-lg'
