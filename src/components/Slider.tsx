@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Slider as BaseSlider } from '@base-ui/react/slider'
+import type { SliderRootChangeEventDetails } from '@base-ui/react/slider'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
@@ -33,25 +34,40 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
       defaultValue || value || [0]
     )
 
-    const currentValue = value !== undefined ? value : internalValue
+    // Sync external value changes to internal state
+    React.useEffect(() => {
+      if (value !== undefined) {
+        setInternalValue(value)
+      }
+    }, [value])
 
-    const handleValueChange = (newValue: number | readonly number[], eventDetails: any) => {
-      setInternalValue(newValue)
+    const isControlled = value !== undefined
+    const currentValue = isControlled ? value : internalValue
+
+    const handleValueChange = (newValue: number | readonly number[], eventDetails: SliderRootChangeEventDetails) => {
+      if (!isControlled) {
+        setInternalValue(newValue)
+      }
       onValueChange?.(newValue, eventDetails)
     }
 
-    // Format value for display
-    const displayValue = Array.isArray(currentValue) 
-      ? currentValue.join(', ') 
-      : String(currentValue)
+    // Format value for display with proper validation
+    const displayValue = React.useMemo(() => {
+      if (currentValue === undefined || currentValue === null) {
+        return '0'
+      }
+      if (Array.isArray(currentValue)) {
+        return currentValue.map(v => Number.isFinite(v) ? v : 0).join(', ')
+      }
+      return Number.isFinite(currentValue) ? String(currentValue) : '0'
+    }, [currentValue])
 
     return (
       <div className="space-y-2 w-full">
         <BaseSlider.Root
           ref={ref}
           className={cn(sliderVariants({ size, className }))}
-          value={currentValue}
-          defaultValue={defaultValue}
+          {...(isControlled ? { value: currentValue } : { defaultValue: defaultValue || [0] })}
           onValueChange={handleValueChange}
           {...props}
         >
