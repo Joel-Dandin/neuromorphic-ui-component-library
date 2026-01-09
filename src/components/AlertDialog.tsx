@@ -4,7 +4,29 @@ import { cn } from '@/lib/utils'
 
 const AlertDialog = BaseAlertDialog.Root
 
-const AlertDialogTrigger = BaseAlertDialog.Trigger
+const AlertDialogTrigger = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<typeof BaseAlertDialog.Trigger>
+>(({ className, children, ...props }, ref) => {
+  // If children is a Button component, extract its props
+  if (React.isValidElement(children) && typeof children.type !== 'string') {
+    return (
+      <BaseAlertDialog.Trigger
+        ref={ref}
+        className={cn(children.props.className, className)}
+        {...props}
+      >
+        {children.props.children}
+      </BaseAlertDialog.Trigger>
+    )
+  }
+  return (
+    <BaseAlertDialog.Trigger ref={ref} className={className} {...props}>
+      {children}
+    </BaseAlertDialog.Trigger>
+  )
+})
+AlertDialogTrigger.displayName = 'AlertDialogTrigger'
 
 const AlertDialogPortal = BaseAlertDialog.Portal
 
