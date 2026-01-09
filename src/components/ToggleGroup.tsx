@@ -29,6 +29,7 @@ const toggleGroupItemVariants = cva(
     'inline-flex items-center justify-center whitespace-nowrap rounded-neumorph-sm px-3 py-2',
     'text-sm font-medium transition-all',
     'disabled:pointer-events-none disabled:opacity-50',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
     'text-secondary-600 dark:text-secondary-400',
     'hover:text-secondary-900 hover:dark:text-secondary-100',
     'data-[pressed]:shadow-neumorph data-[pressed]:dark:shadow-neumorph-dark',

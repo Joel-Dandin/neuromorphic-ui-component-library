@@ -33,6 +33,7 @@ const AccordionTrigger = React.forwardRef<
         'flex flex-1 items-center justify-between px-4 py-3',
         'font-medium text-sm text-secondary-900 dark:text-secondary-100',
         'transition-all',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
         'hover:bg-secondary-50 dark:hover:bg-secondary-800/50',
         'data-[panel-open]:bg-secondary-50 data-[panel-open]:dark:bg-secondary-800/50',
         '[&[data-panel-open]>svg]:rotate-180',
