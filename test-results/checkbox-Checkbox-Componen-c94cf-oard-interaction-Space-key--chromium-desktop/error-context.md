@@ -1,0 +1,460 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - heading "Neumorphism UI Library" [level=1] [ref=e7]
+      - button "Toggle theme" [ref=e8] [cursor=pointer]:
+        - img [ref=e9]
+    - paragraph [ref=e11]: Built with Base UI, Tailwind CSS, and React
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - heading "Buttons" [level=3] [ref=e14]
+      - paragraph [ref=e15]: Neumorphism-styled buttons with different variants and sizes
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Variants" [level=4] [ref=e18]
+        - generic [ref=e19]:
+          - button "Default" [ref=e20] [cursor=pointer]
+          - button "Primary" [ref=e21] [cursor=pointer]
+          - button "Flat" [ref=e22] [cursor=pointer]
+      - generic [ref=e23]:
+        - heading "Sizes" [level=4] [ref=e24]
+        - generic [ref=e25]:
+          - button "Small" [ref=e26] [cursor=pointer]
+          - button "Medium" [ref=e27] [cursor=pointer]
+          - button "Large" [ref=e28] [cursor=pointer]
+          - button [ref=e29] [cursor=pointer]:
+            - img [ref=e30]
+      - generic [ref=e32]:
+        - heading "States" [level=4] [ref=e33]
+        - generic [ref=e34]:
+          - button "Normal" [ref=e35] [cursor=pointer]
+          - button "Disabled" [disabled]
+  - generic [ref=e36]:
+    - generic [ref=e37]:
+      - heading "Input Fields" [level=3] [ref=e38]
+      - paragraph [ref=e39]: Neumorphism-styled input fields with inset shadows
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: Username
+          - textbox "Username" [ref=e45]:
+            - /placeholder: Enter username
+          - paragraph [ref=e46]: Choose a unique username
+        - generic [ref=e47]:
+          - generic [ref=e48]: Email
+          - textbox "Email" [ref=e49]:
+            - /placeholder: you@example.com
+          - paragraph [ref=e50]: We'll never share your email
+        - generic [ref=e51]:
+          - generic [ref=e52]: Password
+          - textbox "Password" [ref=e53]:
+            - /placeholder: ••••••••
+        - generic [ref=e54]:
+          - generic [ref=e55]: Small Input
+          - textbox "Small Input" [ref=e56]:
+            - /placeholder: Small size
+      - generic [ref=e57]:
+        - heading "Large Input" [level=4] [ref=e58]
+        - textbox "Large input field" [ref=e59]
+  - generic [ref=e60]:
+    - generic [ref=e61]:
+      - heading "Cards" [level=2] [ref=e62]
+      - paragraph [ref=e63]: Versatile container components with Neumorphism styling
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - heading "Default Card" [level=3] [ref=e67]
+          - paragraph [ref=e68]: Standard neumorphic card
+        - paragraph [ref=e70]: This card has the default raised appearance with soft shadows.
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - heading "Flat Card" [level=3] [ref=e73]
+          - paragraph [ref=e74]: Minimal styling
+        - paragraph [ref=e76]: This card has a flat appearance with no shadows.
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - heading "Pressed Card" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Inset shadow effect
+        - paragraph [ref=e82]: This card appears pressed into the surface.
+      - generic [ref=e83] [cursor=pointer]:
+        - generic [ref=e84]:
+          - heading "Interactive Card" [level=3] [ref=e85]
+          - paragraph [ref=e86]: Hover to see effect
+        - paragraph [ref=e88]: This card has hover effects for interactive use.
+        - button "Click me" [ref=e90]
+  - generic [ref=e91]:
+    - generic [ref=e92]:
+      - heading "Form Controls" [level=3] [ref=e93]
+      - paragraph [ref=e94]: Switches and checkboxes with Neumorphism styling
+    - generic [ref=e95]:
+      - generic [ref=e96]:
+        - heading "Switches" [level=4] [ref=e97]
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - generic [ref=e100]:
+              - generic [ref=e101]: Enable notifications
+              - paragraph [ref=e102]: Receive notifications about updates
+            - switch [ref=e103] [cursor=pointer]
+            - checkbox [ref=e105]
+          - generic [ref=e106]:
+            - switch [ref=e107] [cursor=pointer]
+            - checkbox [ref=e109]
+            - switch [checked] [ref=e110] [cursor=pointer]
+            - checkbox [checked] [ref=e112]
+            - switch [ref=e113] [cursor=pointer]
+            - checkbox [ref=e115]
+      - generic [ref=e116]:
+        - heading "Checkboxes" [level=4] [ref=e117]
+        - generic [ref=e118]:
+          - generic [ref=e119]:
+            - checkbox [checked] [active] [ref=e120] [cursor=pointer]:
+              - img [ref=e122]
+            - checkbox [checked] [ref=e124]
+            - generic [ref=e125]: Accept terms and conditions
+          - generic [ref=e126]:
+            - checkbox [checked] [ref=e127] [cursor=pointer]:
+              - img [ref=e129]
+            - checkbox [checked] [ref=e131]
+            - checkbox [checked] [ref=e132] [cursor=pointer]:
+              - img [ref=e134]
+            - checkbox [checked] [ref=e136]
+            - checkbox [checked] [ref=e137] [cursor=pointer]:
+              - img [ref=e139]
+            - checkbox [checked] [ref=e141]
+  - generic [ref=e142]:
+    - generic [ref=e143]:
+      - heading "Login" [level=3] [ref=e144]
+      - paragraph [ref=e145]: Enter your credentials to continue
+    - generic [ref=e146]:
+      - generic [ref=e147]:
+        - generic [ref=e148]: Email
+        - textbox "Email" [ref=e149]:
+          - /placeholder: you@example.com
+      - generic [ref=e150]:
+        - generic [ref=e151]: Password
+        - textbox "Password" [ref=e152]:
+          - /placeholder: ••••••••
+      - generic [ref=e153]:
+        - checkbox [ref=e154] [cursor=pointer]
+        - checkbox [ref=e155]
+        - generic [ref=e156]: Remember me
+    - generic [ref=e157]:
+      - button "Sign in" [ref=e158] [cursor=pointer]
+      - button "Create account" [ref=e159] [cursor=pointer]
+  - paragraph [ref=e161]: Built with ❤️ using Base UI, Tailwind CSS, and Class Variance Authority
+  - generic [ref=e162]:
+    - generic [ref=e163]:
+      - heading "Select" [level=3] [ref=e164]
+      - paragraph [ref=e165]: Dropdown select component with Neumorphism styling
+    - generic [ref=e166]:
+      - combobox [ref=e167] [cursor=pointer]:
+        - generic [ref=e168]: react
+        - img [ref=e169]
+      - textbox [ref=e171]: react
+      - combobox [disabled]:
+        - generic: sm
+        - img
+      - textbox [disabled] [ref=e172]: sm
+  - generic [ref=e173]:
+    - generic [ref=e174]:
+      - heading "Slider & Progress" [level=3] [ref=e175]
+      - paragraph [ref=e176]: Interactive slider and progress indicators
+    - generic [ref=e177]:
+      - generic [ref=e178]:
+        - heading "Sliders" [level=4] [ref=e179]
+        - group [ref=e180]:
+          - slider [ref=e184]: "50"
+        - group [ref=e185]:
+          - slider [ref=e189]: "25"
+        - group [ref=e190]:
+          - slider [disabled] [ref=e194]: "60"
+      - generic [ref=e195]:
+        - heading "Progress Bars" [level=4] [ref=e196]
+        - progressbar [ref=e197]
+        - progressbar [ref=e199]
+        - progressbar [ref=e201]
+  - generic [ref=e203]:
+    - generic [ref=e204]:
+      - heading "Tabs" [level=3] [ref=e205]
+      - paragraph [ref=e206]: Tabbed navigation with Neumorphism styling
+    - generic [ref=e208]:
+      - tablist [ref=e209]:
+        - tab "Account" [selected] [ref=e210] [cursor=pointer]
+        - tab "Password" [ref=e211] [cursor=pointer]
+        - tab "Settings" [ref=e212] [cursor=pointer]
+      - tabpanel "Account" [ref=e213]:
+        - heading "Account Settings" [level=3] [ref=e214]
+        - paragraph [ref=e215]: Manage your account settings and preferences here.
+        - textbox "Username" [ref=e216]
+        - textbox "Email" [ref=e217]
+  - generic [ref=e218]:
+    - generic [ref=e219]:
+      - heading "Overlays" [level=3] [ref=e220]
+      - paragraph [ref=e221]: Dialog, Tooltip, and Popover components
+    - generic [ref=e223]:
+      - button "Open Dialog" [ref=e224] [cursor=pointer]:
+        - button "Open Dialog" [ref=e225]
+      - button "Hover for Tooltip" [ref=e226] [cursor=pointer]:
+        - button "Hover for Tooltip" [ref=e227]:
+          - img [ref=e228]
+          - text: Hover for Tooltip
+      - button "Open Popover" [ref=e230] [cursor=pointer]:
+        - button "Open Popover" [ref=e231]:
+          - img [ref=e232]
+          - text: Open Popover
+  - generic [ref=e235]:
+    - generic [ref=e236]:
+      - heading "Radio & Separator" [level=3] [ref=e237]
+      - paragraph [ref=e238]: Radio buttons for single selection and separators for dividing content
+    - generic [ref=e239]:
+      - generic [ref=e240]:
+        - heading "Radio Buttons" [level=4] [ref=e241]
+        - radiogroup [ref=e242]:
+          - generic [ref=e243]:
+            - radio [checked] [ref=e244]
+            - radio [checked] [ref=e246]
+            - generic [ref=e247]: Option 1
+          - generic [ref=e248]:
+            - radio [ref=e249]
+            - radio [ref=e250]
+            - generic [ref=e251]: Option 2
+          - generic [ref=e252]:
+            - radio [disabled] [ref=e253]
+            - radio [disabled] [ref=e254]
+            - generic [ref=e255]: Option 3 (Disabled)
+        - textbox [ref=e256]: option-1
+      - separator [ref=e257]
+      - generic [ref=e258]:
+        - heading "Radio Sizes" [level=4] [ref=e259]
+        - radiogroup [ref=e260]:
+          - generic [ref=e261]:
+            - generic [ref=e262]:
+              - radio [ref=e263]
+              - radio [ref=e264]
+              - generic [ref=e265]: Small
+            - generic [ref=e266]:
+              - radio [checked] [ref=e267]
+              - radio [checked] [ref=e269]
+              - generic [ref=e270]: Medium
+            - generic [ref=e271]:
+              - radio [ref=e272]
+              - radio [ref=e273]
+              - generic [ref=e274]: Large
+        - textbox [ref=e275]: size-md
+  - generic [ref=e276]:
+    - generic [ref=e277]:
+      - heading "Accordion" [level=3] [ref=e278]
+      - paragraph [ref=e279]: Collapsible content panels with smooth animations
+    - region [ref=e281]:
+      - generic [ref=e282]:
+        - heading "What is Neumorphism?" [level=3] [ref=e283]:
+          - button "What is Neumorphism?" [expanded] [ref=e284] [cursor=pointer]:
+            - text: What is Neumorphism?
+            - img [ref=e285]
+        - region [ref=e287]:
+          - generic [ref=e288]: Neumorphism (or Soft UI) is a design trend that combines elements of skeuomorphism and flat design. It features soft shadows and subtle depth to create elements that appear to be extruded from or pressed into the background.
+      - heading "How does it work?" [level=3] [ref=e290]:
+        - button "How does it work?" [ref=e291] [cursor=pointer]:
+          - text: How does it work?
+          - img [ref=e292]
+      - heading "Is it accessible?" [level=3] [ref=e295]:
+        - button "Is it accessible?" [ref=e296] [cursor=pointer]:
+          - text: Is it accessible?
+          - img [ref=e297]
+  - generic [ref=e299]:
+    - generic [ref=e300]:
+      - heading "Alert Dialog & Menu" [level=3] [ref=e301]
+      - paragraph [ref=e302]: Alert dialogs for important actions and dropdown menus
+    - generic [ref=e304]:
+      - button "Delete Account" [ref=e305] [cursor=pointer]:
+        - button "Delete Account" [ref=e306]
+      - button "Open Menu" [ref=e307] [cursor=pointer]:
+        - button "Open Menu" [ref=e308]
+  - generic [ref=e309]:
+    - generic [ref=e310]:
+      - heading "Number Field" [level=3] [ref=e311]
+      - paragraph [ref=e312]: Enhanced number input with increment/decrement buttons and scrub area
+    - generic [ref=e313]:
+      - generic [ref=e314]:
+        - heading "Sizes" [level=4] [ref=e315]
+        - generic [ref=e316]:
+          - textbox [ref=e317]: "10"
+          - generic [ref=e318]:
+            - button "Increase" [ref=e319] [cursor=pointer]:
+              - img [ref=e320]
+            - button "Decrease" [ref=e322] [cursor=pointer]:
+              - img [ref=e323]
+        - spinbutton [ref=e325]: "10"
+        - generic [ref=e326]:
+          - textbox [ref=e327]: "50"
+          - generic [ref=e328]:
+            - button "Increase" [ref=e329] [cursor=pointer]:
+              - img [ref=e330]
+            - button "Decrease" [ref=e332] [cursor=pointer]:
+              - img [ref=e333]
+        - spinbutton [ref=e335]: "50"
+        - generic [ref=e336]:
+          - textbox [ref=e337]: "75"
+          - generic [ref=e338]:
+            - button "Increase" [ref=e339] [cursor=pointer]:
+              - img [ref=e340]
+            - button "Decrease" [ref=e342] [cursor=pointer]:
+              - img [ref=e343]
+        - spinbutton [ref=e345]: "75"
+      - separator [ref=e346]
+      - generic [ref=e347]:
+        - heading "With Steps" [level=4] [ref=e348]
+        - generic [ref=e349]:
+          - textbox [ref=e350]: "0"
+          - generic [ref=e351]:
+            - button "Increase" [ref=e352] [cursor=pointer]:
+              - img [ref=e353]
+            - button "Decrease" [disabled] [ref=e355]:
+              - img [ref=e356]
+        - spinbutton [ref=e358]: "0"
+        - generic [ref=e359]:
+          - textbox [ref=e360]: "100"
+          - generic [ref=e361]:
+            - button "Increase" [ref=e362] [cursor=pointer]:
+              - img [ref=e363]
+            - button "Decrease" [ref=e365] [cursor=pointer]:
+              - img [ref=e366]
+        - spinbutton [ref=e368]: "100"
+  - generic [ref=e369]:
+    - generic [ref=e370]:
+      - heading "Toast, Collapsible & Toggle" [level=3] [ref=e371]
+      - paragraph [ref=e372]: Notifications, collapsible content, and toggle buttons
+    - generic [ref=e373]:
+      - generic [ref=e374]:
+        - heading "Toast Notifications" [level=4] [ref=e375]
+        - button "Show Toast" [ref=e376] [cursor=pointer]
+        - region "Notifications" [ref=e377]
+      - separator [ref=e378]
+      - generic [ref=e379]:
+        - heading "Collapsible" [level=4] [ref=e380]
+        - button "Click to expand" [ref=e382] [cursor=pointer]:
+          - text: Click to expand
+          - img [ref=e383]
+      - separator [ref=e385]
+      - generic [ref=e386]:
+        - heading "Toggle Buttons" [level=4] [ref=e387]
+        - generic [ref=e388]:
+          - button [ref=e389] [cursor=pointer]:
+            - img [ref=e390]
+          - button [ref=e392] [cursor=pointer]:
+            - img [ref=e393]
+          - button [ref=e395] [cursor=pointer]:
+            - img [ref=e396]
+  - generic [ref=e398]:
+    - generic [ref=e399]:
+      - heading "Avatar & Meter" [level=3] [ref=e400]
+      - paragraph [ref=e401]: User avatars and progress meters
+    - generic [ref=e402]:
+      - generic [ref=e403]:
+        - heading "Avatars" [level=4] [ref=e404]
+        - generic [ref=e405]:
+          - generic [ref=e407]: JD
+          - generic [ref=e409]: AB
+          - generic [ref=e411]: XY
+      - separator [ref=e412]
+      - generic [ref=e413]:
+        - heading "Meters" [level=4] [ref=e414]
+        - generic [ref=e415]:
+          - generic [ref=e416]: Optimal (75%)
+          - meter [ref=e417]
+        - generic [ref=e419]:
+          - generic [ref=e420]: Sub-optimal (45%)
+          - meter [ref=e421]
+        - generic [ref=e423]:
+          - generic [ref=e424]: Critical (20%)
+          - meter [ref=e425]
+  - generic [ref=e427]:
+    - generic [ref=e428]:
+      - heading "Fieldset & Checkbox Group" [level=3] [ref=e429]
+      - paragraph [ref=e430]: Form grouping and checkbox collections
+    - generic [ref=e431]:
+      - group "Personal Information" [ref=e432]:
+        - generic [ref=e433]: Personal Information
+        - generic [ref=e434]:
+          - textbox "First Name" [ref=e435]
+          - textbox "Last Name" [ref=e436]
+          - textbox "Email" [ref=e437]
+      - group [ref=e438]:
+        - generic [ref=e439]: Preferences
+        - generic [ref=e440]:
+          - generic [ref=e441]:
+            - checkbox [checked] [ref=e442] [cursor=pointer]:
+              - img [ref=e444]
+            - checkbox [checked] [ref=e446]
+            - generic [ref=e447]: Email notifications
+          - generic [ref=e448]:
+            - checkbox [ref=e449] [cursor=pointer]
+            - checkbox [ref=e450]
+            - generic [ref=e451]: Marketing emails
+          - generic [ref=e452]:
+            - checkbox [ref=e453] [cursor=pointer]
+            - checkbox [ref=e454]
+            - generic [ref=e455]: Product updates
+  - generic [ref=e456]:
+    - generic [ref=e457]:
+      - heading "Toggle Group & Toolbar" [level=3] [ref=e458]
+      - paragraph [ref=e459]: Toggle button groups and toolbars for formatting
+    - generic [ref=e460]:
+      - generic [ref=e461]:
+        - heading "Toggle Group" [level=4] [ref=e462]
+        - group [ref=e463]:
+          - button [pressed] [ref=e464] [cursor=pointer]:
+            - img [ref=e465]
+          - button [ref=e467] [cursor=pointer]:
+            - img [ref=e468]
+          - button [ref=e470] [cursor=pointer]:
+            - img [ref=e471]
+      - separator [ref=e473]
+      - generic [ref=e474]:
+        - heading "Toolbar" [level=4] [ref=e475]
+        - toolbar [ref=e476]:
+          - button [ref=e477] [cursor=pointer]:
+            - img [ref=e478]
+          - button [ref=e480] [cursor=pointer]:
+            - img [ref=e481]
+          - button [ref=e483] [cursor=pointer]:
+            - img [ref=e484]
+          - button "Save" [ref=e487] [cursor=pointer]
+          - button "Export" [ref=e488] [cursor=pointer]
+  - generic [ref=e489]:
+    - generic [ref=e490]:
+      - heading "Context Menu & Scroll Area" [level=3] [ref=e491]
+      - paragraph [ref=e492]: Right-click menus and custom scrollable areas
+    - generic [ref=e493]:
+      - generic [ref=e494]:
+        - heading "Context Menu (Right-click)" [level=4] [ref=e495]
+        - paragraph [ref=e498]: Right-click here
+      - separator [ref=e499]
+      - generic [ref=e500]:
+        - heading "Scroll Area" [level=4] [ref=e501]
+        - generic [ref=e503]:
+          - paragraph [ref=e504]: Scrollable content item 1
+          - paragraph [ref=e505]: Scrollable content item 2
+          - paragraph [ref=e506]: Scrollable content item 3
+          - paragraph [ref=e507]: Scrollable content item 4
+          - paragraph [ref=e508]: Scrollable content item 5
+          - paragraph [ref=e509]: Scrollable content item 6
+          - paragraph [ref=e510]: Scrollable content item 7
+          - paragraph [ref=e511]: Scrollable content item 8
+          - paragraph [ref=e512]: Scrollable content item 9
+          - paragraph [ref=e513]: Scrollable content item 10
+          - paragraph [ref=e514]: Scrollable content item 11
+          - paragraph [ref=e515]: Scrollable content item 12
+          - paragraph [ref=e516]: Scrollable content item 13
+          - paragraph [ref=e517]: Scrollable content item 14
+          - paragraph [ref=e518]: Scrollable content item 15
+          - paragraph [ref=e519]: Scrollable content item 16
+          - paragraph [ref=e520]: Scrollable content item 17
+          - paragraph [ref=e521]: Scrollable content item 18
+          - paragraph [ref=e522]: Scrollable content item 19
+          - paragraph [ref=e523]: Scrollable content item 20
+  - paragraph [ref=e527]: Built with ❤️ using Base UI, Tailwind CSS, and Class Variance Authority
+```
