@@ -18,11 +18,11 @@
   /* High contrast mode support */
   @media (prefers-contrast: more) {
     :root {
-      --neumorph-shadow-dark: 130 150 180; /* Darker shadow for better contrast */
+      --neumorph-shadow-dark: 120 140 170; /* Enhanced shadow for better contrast */
     }
 
     .dark {
-      --neumorph-shadow-light: 80 100 120; /* Lighter shadow for better contrast in dark mode */
+      --neumorph-shadow-light: 80 100 120; /* Enhanced shadow for better contrast in dark mode */
     }
   }
 

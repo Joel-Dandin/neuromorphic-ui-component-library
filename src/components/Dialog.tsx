@@ -62,7 +62,6 @@ const DialogContent = React.forwardRef<
         aria-label="Close dialog"
       >
         <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
       </BaseDialog.Close>
     </BaseDialog.Popup>
   </DialogPortal>
