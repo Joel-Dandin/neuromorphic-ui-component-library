@@ -5,8 +5,6 @@ import { cn } from '@/lib/utils'
 
 const Dialog = BaseDialog.Root
 
-const DialogTriggerBase = BaseDialog.Trigger
-
 const DialogTrigger = React.forwardRef<
   HTMLButtonElement,
   React.ComponentPropsWithoutRef<typeof BaseDialog.Trigger>
