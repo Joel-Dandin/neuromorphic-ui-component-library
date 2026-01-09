@@ -30,7 +30,7 @@ const tabsTriggerVariants = cva(
     'inline-flex items-center justify-center whitespace-nowrap',
     'px-4 py-2 text-sm font-medium rounded-neumorph-sm',
     'ring-offset-background transition-all',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
     'disabled:pointer-events-none disabled:opacity-50',
     'text-secondary-600 dark:text-secondary-400',
     'data-[selected]:text-secondary-900 data-[selected]:dark:text-secondary-100',
@@ -59,7 +59,7 @@ const TabsContent = React.forwardRef<
     ref={ref}
     className={cn(
       'mt-4 ring-offset-background',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
       className
     )}
     {...props}

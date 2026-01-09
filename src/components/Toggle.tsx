@@ -8,6 +8,7 @@ const toggleVariants = cva(
     'inline-flex items-center justify-center rounded-neumorph',
     'text-sm font-medium transition-all',
     'disabled:pointer-events-none disabled:opacity-50',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
     'bg-neumorph-light-bg dark:bg-neumorph-dark-bg',
     'text-secondary-600 dark:text-secondary-400',
     'shadow-neumorph dark:shadow-neumorph-dark',
