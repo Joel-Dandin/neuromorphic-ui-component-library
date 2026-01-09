@@ -74,6 +74,61 @@ Open [http://localhost:5173](http://localhost:5173) to see the component showcas
 npm run build
 ```
 
+## 🔀 Branch Structure
+
+This repository uses a **dual-branch workflow** for cleaner separation of concerns:
+
+### Main Branch (`main`)
+- Contains the core component library code
+- **Does NOT include** test files or test dependencies
+- Used for production releases and library development
+- Faster CI/CD without test infrastructure overhead
+
+### Test Suite Branch (`test-suite`)
+- Contains all testing infrastructure and test files
+- Includes Playwright configuration and test specifications
+- Test-specific dependencies and configuration
+- Can be developed and updated independently from main
+
+### Working with Tests
+
+To develop or run tests, switch to the `test-suite` branch:
+
+```bash
+# Switch to test-suite branch
+git checkout test-suite
+
+# Install dependencies (includes test dependencies)
+npm install
+
+# Install Playwright browsers
+npx playwright install
+
+# Run tests
+npx playwright test
+
+# Run tests in UI mode
+npx playwright test --ui
+```
+
+### Keeping Test Suite in Sync
+
+Periodically merge main branch changes into test-suite:
+
+```bash
+git checkout test-suite
+git merge main
+# Add tests for new components
+git commit -m "Add tests for new components"
+git push origin test-suite
+```
+
+This separation enables:
+- ✨ Parallel development of library and tests
+- 🚀 Faster main branch CI/CD
+- 🧹 Cleaner main branch focused on library code
+- 🔧 Independent test framework updates
+
 ## 🎨 Usage Examples
 
 ### Button

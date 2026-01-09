@@ -1,5 +1,24 @@
 # Project Structure
 
+## Repository Branch Structure
+
+This repository uses a **dual-branch workflow** to separate main development from testing:
+
+- **`main` branch**: Contains the core component library code without test files
+  - Used for production releases
+  - Cleaner structure focused on library code
+  - Faster CI/CD without test dependencies
+
+- **`test-suite` branch**: Contains all testing infrastructure
+  - Playwright test configuration
+  - Test specifications
+  - Test-specific dependencies
+  - Can be developed and updated independently
+
+This separation enables parallel development of the library and its test suite.
+
+## Main Branch Structure
+
 ```
 custom-component-lib-2/
 ├── src/
@@ -30,6 +49,20 @@ custom-component-lib-2/
 ├── README.md
 ├── COMPONENT_GUIDE.md
 └── .gitignore
+```
+
+## Test Suite Branch Structure
+
+```
+custom-component-lib-2/
+├── (all files from main branch)
+├── tests/
+│   ├── accessibility.spec.ts    # Accessibility compliance tests
+│   ├── components.spec.ts       # Component functionality tests
+│   └── responsive.spec.ts       # Responsive design tests
+├── playwright.config.ts         # Playwright configuration
+├── TEST_REPORT.md               # Test documentation
+└── package.json                 # Includes test dependencies
 ```
 
 ## Key Files
