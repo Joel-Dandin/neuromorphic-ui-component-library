@@ -57,7 +57,7 @@ const NumberField = React.forwardRef<HTMLDivElement, NumberFieldProps>(
               'rounded-neumorph-sm p-0.5',
               'shadow-neumorph dark:shadow-neumorph-dark',
               'hover:shadow-neumorph-sm hover:dark:shadow-neumorph-dark-sm',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-1',
               'transition-all duration-150',
               'text-secondary-600 dark:text-secondary-400'
             )}
@@ -71,7 +71,7 @@ const NumberField = React.forwardRef<HTMLDivElement, NumberFieldProps>(
               'rounded-neumorph-sm p-0.5',
               'shadow-neumorph dark:shadow-neumorph-dark',
               'hover:shadow-neumorph-sm hover:dark:shadow-neumorph-dark-sm',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-1',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-1',
               'transition-all duration-150',
               'text-secondary-600 dark:text-secondary-400'
             )}
