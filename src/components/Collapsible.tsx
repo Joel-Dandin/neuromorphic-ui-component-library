@@ -16,6 +16,7 @@ const CollapsibleTrigger = React.forwardRef<
       'bg-neumorph-light-bg dark:bg-neumorph-dark-bg',
       'shadow-neumorph dark:shadow-neumorph-dark',
       'text-sm font-medium text-secondary-900 dark:text-secondary-100',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
       'hover:shadow-neumorph-sm hover:dark:shadow-neumorph-dark-sm',
       'transition-all',
       '[&[data-panel-open]>svg]:rotate-180',

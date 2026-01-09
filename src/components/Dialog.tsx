@@ -55,12 +55,13 @@ const DialogContent = React.forwardRef<
           'absolute right-4 top-4 rounded-neumorph-sm p-2',
           'shadow-neumorph dark:shadow-neumorph-dark',
           'hover:shadow-neumorph-sm hover:dark:shadow-neumorph-dark-sm',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
           'transition-all duration-200',
           'text-secondary-600 dark:text-secondary-400'
         )}
+        aria-label="Close dialog"
       >
         <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
       </BaseDialog.Close>
     </BaseDialog.Popup>
   </DialogPortal>

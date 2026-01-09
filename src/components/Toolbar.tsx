@@ -32,6 +32,7 @@ const ToolbarButton = React.forwardRef<
       'text-secondary-900 dark:text-secondary-100',
       'shadow-neumorph dark:shadow-neumorph-dark',
       'hover:shadow-neumorph-sm hover:dark:shadow-neumorph-dark-sm',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
       'disabled:pointer-events-none disabled:opacity-50',
       'transition-all',
       className

@@ -42,7 +42,7 @@ const NumberField = React.forwardRef<HTMLDivElement, NumberFieldProps>(
           <BaseNumberField.Input
             className={cn(
               'w-full bg-transparent text-secondary-900 dark:text-secondary-100',
-              'focus:outline-none',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2',
               'placeholder:text-secondary-400 dark:placeholder:text-secondary-500',
               size === 'sm' && 'text-sm',
               size === 'md' && 'text-base',
@@ -57,9 +57,11 @@ const NumberField = React.forwardRef<HTMLDivElement, NumberFieldProps>(
               'rounded-neumorph-sm p-0.5',
               'shadow-neumorph dark:shadow-neumorph-dark',
               'hover:shadow-neumorph-sm hover:dark:shadow-neumorph-dark-sm',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2',
               'transition-all duration-150',
               'text-secondary-600 dark:text-secondary-400'
             )}
+            aria-label="Increment"
           >
             <ChevronUp className="h-3 w-3" />
           </BaseNumberField.Increment>
@@ -69,9 +71,11 @@ const NumberField = React.forwardRef<HTMLDivElement, NumberFieldProps>(
               'rounded-neumorph-sm p-0.5',
               'shadow-neumorph dark:shadow-neumorph-dark',
               'hover:shadow-neumorph-sm hover:dark:shadow-neumorph-dark-sm',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2',
               'transition-all duration-150',
               'text-secondary-600 dark:text-secondary-400'
             )}
+            aria-label="Decrement"
           >
             <ChevronDown className="h-3 w-3" />
           </BaseNumberField.Decrement>

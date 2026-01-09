@@ -54,7 +54,7 @@ const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
             'bg-neumorph-light-bg dark:bg-neumorph-dark-bg',
             'shadow-neumorph dark:shadow-neumorph-dark',
             'ring-offset-background transition-all',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
             'hover:shadow-neumorph-lg hover:dark:shadow-neumorph-dark-lg',
             'disabled:pointer-events-none disabled:opacity-50',
             'cursor-grab active:cursor-grabbing'

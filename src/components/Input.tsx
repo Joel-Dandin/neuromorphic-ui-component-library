@@ -11,8 +11,8 @@ const inputVariants = cva(
     'placeholder:text-secondary-400 dark:placeholder:text-secondary-500',
     'shadow-neumorph-inset dark:shadow-neumorph-dark-inset',
     'transition-all duration-200',
-    'focus:shadow-neumorph-sm dark:focus:shadow-neumorph-dark-sm',
-    'focus:outline-none focus:ring-2 focus:ring-primary-500/20',
+    'focus-visible:shadow-neumorph-sm dark:focus-visible:shadow-neumorph-dark-sm',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2',
     'disabled:opacity-50 disabled:pointer-events-none',
   ].join(' '),
   {

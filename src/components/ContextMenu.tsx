@@ -41,6 +41,7 @@ const ContextMenuItem = React.forwardRef<
       'relative flex cursor-pointer select-none items-center rounded-neumorph-sm px-3 py-2',
       'text-sm text-secondary-900 dark:text-secondary-100',
       'outline-none transition-all',
+      'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
       'hover:shadow-neumorph-sm hover:dark:shadow-neumorph-dark-sm',
       'data-[highlighted]:shadow-neumorph-sm data-[highlighted]:dark:shadow-neumorph-dark-sm',
       'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',

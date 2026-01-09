@@ -8,7 +8,7 @@ const buttonVariants = cva(
     'inline-flex items-center justify-center gap-2',
     'font-medium transition-all duration-200',
     'disabled:opacity-50 disabled:pointer-events-none',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
     'bg-neumorph-light-bg dark:bg-neumorph-dark-bg',
     'relative overflow-hidden',
   ].join(' '),
