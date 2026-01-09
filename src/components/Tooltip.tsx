@@ -4,7 +4,29 @@ import { cn } from '@/lib/utils'
 
 const Tooltip = BaseTooltip.Root
 
-const TooltipTrigger = BaseTooltip.Trigger
+const TooltipTrigger = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<typeof BaseTooltip.Trigger>
+>(({ className, children, ...props }, ref) => {
+  // If children is a Button component, extract its props
+  if (React.isValidElement(children) && typeof children.type !== 'string') {
+    return (
+      <BaseTooltip.Trigger
+        ref={ref}
+        className={cn(children.props.className, className)}
+        {...props}
+      >
+        {children.props.children}
+      </BaseTooltip.Trigger>
+    )
+  }
+  return (
+    <BaseTooltip.Trigger ref={ref} className={className} {...props}>
+      {children}
+    </BaseTooltip.Trigger>
+  )
+})
+TooltipTrigger.displayName = 'TooltipTrigger'
 
 const TooltipPortal = BaseTooltip.Portal
 

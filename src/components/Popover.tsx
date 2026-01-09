@@ -4,7 +4,29 @@ import { cn } from '@/lib/utils'
 
 const Popover = BasePopover.Root
 
-const PopoverTrigger = BasePopover.Trigger
+const PopoverTrigger = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<typeof BasePopover.Trigger>
+>(({ className, children, ...props }, ref) => {
+  // If children is a Button component, extract its props
+  if (React.isValidElement(children) && typeof children.type !== 'string') {
+    return (
+      <BasePopover.Trigger
+        ref={ref}
+        className={cn(children.props.className, className)}
+        {...props}
+      >
+        {children.props.children}
+      </BasePopover.Trigger>
+    )
+  }
+  return (
+    <BasePopover.Trigger ref={ref} className={className} {...props}>
+      {children}
+    </BasePopover.Trigger>
+  )
+})
+PopoverTrigger.displayName = 'PopoverTrigger'
 
 const PopoverPortal = BasePopover.Portal
 

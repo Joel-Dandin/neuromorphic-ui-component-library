@@ -5,7 +5,31 @@ import { cn } from '@/lib/utils'
 
 const Dialog = BaseDialog.Root
 
-const DialogTrigger = BaseDialog.Trigger
+const DialogTriggerBase = BaseDialog.Trigger
+
+const DialogTrigger = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<typeof BaseDialog.Trigger>
+>(({ className, children, ...props }, ref) => {
+  // If children is a Button component, extract its props
+  if (React.isValidElement(children) && typeof children.type !== 'string') {
+    return (
+      <BaseDialog.Trigger
+        ref={ref}
+        className={cn(children.props.className, className)}
+        {...props}
+      >
+        {children.props.children}
+      </BaseDialog.Trigger>
+    )
+  }
+  return (
+    <BaseDialog.Trigger ref={ref} className={className} {...props}>
+      {children}
+    </BaseDialog.Trigger>
+  )
+})
+DialogTrigger.displayName = 'DialogTrigger'
 
 const DialogPortal = BaseDialog.Portal
 

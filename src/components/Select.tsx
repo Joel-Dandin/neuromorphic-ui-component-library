@@ -89,11 +89,13 @@ const SelectContent = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof BaseSelect.Popup>
 >(({ className, ...props }, ref) => (
   <SelectPortal>
-    <BaseSelect.Popup
-      ref={ref}
-      className={cn(selectContentVariants(), className)}
-      {...props}
-    />
+    <BaseSelect.Positioner>
+      <BaseSelect.Popup
+        ref={ref}
+        className={cn(selectContentVariants(), className)}
+        {...props}
+      />
+    </BaseSelect.Positioner>
   </SelectPortal>
 ))
 SelectContent.displayName = 'SelectContent'

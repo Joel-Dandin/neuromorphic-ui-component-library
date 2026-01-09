@@ -5,7 +5,29 @@ import { cn } from '@/lib/utils'
 
 const Menu = BaseMenu.Root
 
-const MenuTrigger = BaseMenu.Trigger
+const MenuTrigger = React.forwardRef<
+  HTMLButtonElement,
+  React.ComponentPropsWithoutRef<typeof BaseMenu.Trigger>
+>(({ className, children, ...props }, ref) => {
+  // If children is a Button component, extract its props
+  if (React.isValidElement(children) && typeof children.type !== 'string') {
+    return (
+      <BaseMenu.Trigger
+        ref={ref}
+        className={cn(children.props.className, className)}
+        {...props}
+      >
+        {children.props.children}
+      </BaseMenu.Trigger>
+    )
+  }
+  return (
+    <BaseMenu.Trigger ref={ref} className={className} {...props}>
+      {children}
+    </BaseMenu.Trigger>
+  )
+})
+MenuTrigger.displayName = 'MenuTrigger'
 
 const MenuPortal = BaseMenu.Portal
 
